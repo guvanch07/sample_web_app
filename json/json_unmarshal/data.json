@@ -1,0 +1,18 @@
+{
+    "id": 44,
+    "price": 4000,
+    "items": [
+        {
+            "name": "snowBoard",
+            "number": 1
+        },
+        {
+            "name": "ski",
+            "number": 3
+        },
+        {
+            "name": "ball",
+            "number": 3
+        }
+    ]
+}
