@@ -22,6 +22,7 @@ func FormHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		io.WriteString(w, err.Error())
+		return
 	}
 	file, header, err := r.FormFile("myfile")
 	if err != nil {
@@ -30,6 +31,7 @@ func FormHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer file.Close()
+
 	fmt.Println(header.Filename)
 	fmt.Println(header.Header)
 	fmt.Println(header.Size)
@@ -39,8 +41,10 @@ func FormHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		io.WriteString(w, err.Error())
+		return
 	}
 	defer tmpFile.Close()
+
 	fmt.Println(tmpFile.Name())
 
 	bytes, err := io.ReadAll(tmpFile)
