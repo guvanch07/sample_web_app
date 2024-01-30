@@ -22,18 +22,11 @@ func readLines(name string) ([]string, error) {
 		line := scanner.Text()
 		lines = append(lines, line)
 	}
-
 	if err := scanner.Err(); err != nil {
 		return nil, fmt.Errorf("ошибка при чтении файла: %v", err)
 	}
-	if len(lines) > 0 && lines[len(lines)-1] == "" {
-		lines = lines[:len(lines)-1]
-	}
-
 	return lines, nil
 }
-
-// конец решения
 
 // конец решения
 
