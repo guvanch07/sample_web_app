@@ -31,11 +31,12 @@ func readLines(name string) ([]string, error) {
 // конец решения
 
 func main() {
-	lines, err := readLines("/etc/passwd")
-	if err != nil {
-		panic(err)
-	}
-	for idx, line := range lines {
-		fmt.Printf("%d: %s\n", idx+1, line)
-	}
+	// lines, err := readLines("/etc/passwd")
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// for idx, line := range lines {
+	// 	fmt.Printf("%d: %s\n", idx+1, line)
+	// }
+	mainFile()
 }
